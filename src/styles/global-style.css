@@ -1,0 +1,47 @@
+.typography-bold{
+  font-weight: bold;
+}
+
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.card{
+  transition: all 100ms ease-in-out;
+}
+
+.card-hover-anim:hover {
+  transform: scale(1.04);
+  border: none;
+}
+
+.description-textarea textarea{
+  height: 276px !important;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(35px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .tablet-cloums {
+    flex-basis: 33.33% !important;
+    max-width: 33.33% !important;
+  }
+}
