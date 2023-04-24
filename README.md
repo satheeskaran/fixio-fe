@@ -67,3 +67,11 @@ Create a new branch and give it a sensible name.
 Once you are done, please make a pull request and send us an email that you've done so.
 
 Don't worry about having many commits — we'd like to see your progress.
+
+## Newly added packages
+
+Added Axios for make HTTP request
+
+Added React-Hooks-Form form create a form and submit forms
+
+Added Redux for global state management of application
