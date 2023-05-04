@@ -67,3 +67,45 @@ Create a new branch and give it a sensible name.
 Once you are done, please make a pull request and send us an email that you've done so.
 
 Don't worry about having many commits — we'd like to see your progress.
+
+# Prerequisites
+
+This project requires NodeJS (version 8 or later) and NPM. Node and NPM are really easy to install. To make sure you have them available on your machine, try running the following command.
+
+$ npm -v && node -v
+
+9.6.2
+v18.12.1
+
+# Installation and Setup Instructions
+
+Clone down this repository. You will need node and npm installed globally on your machine.
+
+Installation:
+
+npm install
+
+To Run Test Suite:
+
+npm test
+
+To Start Server:
+
+npm run dev
+
+To Visit App:
+
+localhost:3000
+
+# Used tools and technologies
+
+* Next.js - This project creat used by react framework called next.js and javaScript
+
+* Material UI - Add material ui for get simple and already tested smaller components for responsive designs.
+
+* Redux ToolKits - Add redux's latest framework called redux toolkits for maintaining the global state of this application.
+
+* React Hook Form - Add hook form for simple form validation and partial validations.
+
+* Axios - Add axios for make HTTP requests.
+

@@ -1,10 +1,11 @@
 import {Typography, Grid} from '@mui/material';
-import MuButton from '../common/MuButton';
-import DamageCard from '../common/DamageCard';
 import { useSelector } from 'react-redux';
+import DamageCard from '../components/common/DamageCard';
+import MuButton from '../components/common/MuButton';
 
 export default function Home() {
   
+  //get damage reports from redux store
   const reports = useSelector(state => state.reports);
 
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <Typography className="typography-bold" variant="h4">
           Damage Reports
         </Typography>
-        <MuButton variant="contained" title="New Report" type="link" href="/report/new-report"/>
+        <MuButton variant="contained" title="New Report" type="link" href="/new-report"/>
       </Grid>
       <Grid item sm={12} md={10} columns={{ sm: 12, md: 10 }} 
         display={'flex'} flexWrap={'wrap'} 

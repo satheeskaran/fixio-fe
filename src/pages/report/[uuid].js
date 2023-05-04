@@ -1,21 +1,19 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { Box, Stepper, Typography, StepLabel, Button, Step, Grid } from '@mui/material';
-import StepOne from '../../Components/StepOne';
-import StepTwo from '../../Components/StepTwo';
-import StepThree from '../../Components/StepThree';
-import MuButton from '../../common/MuButton';
-import { useForm } from "react-hook-form";
+import { Box, Typography, Grid } from '@mui/material';
 import vehicles from '../../vehicles.json';
 import Image from 'next/image';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { addReport } from '../../slices/reportsSlice';
 import { getReportByUUID, getReports } from '../api/reports';
+import MuButton from '../../components/common/MuButton';
 
 const ReportDetails = ({report}) => {
+
+  //get report information from prom and parse to json 
   const reportInfo = JSON.parse(report);
+
+  //get vehicle details by vehicle id
   const vehicle = vehicles.filter(e => e.id == reportInfo.vehicleId);
+
+  //get vehicle model by vehicle model id
   const model = vehicle[0].models.filter(e => e.id == reportInfo.vehicleModel);
   return(
     <>
@@ -65,6 +63,7 @@ const ReportDetails = ({report}) => {
 export default ReportDetails;
 
 export async function getStaticProps({params}) {
+  //get damage report by UUID
   const report = await getReportByUUID(params.uuid);
   return {
     props: {report: report}
@@ -72,8 +71,10 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
+  //get all damage reports' UUIDs
   const response = await getReports();
   const reports = response.uuids;
+
   return {
     paths: reports.map(e => {
       return {params: {uuid: e}}

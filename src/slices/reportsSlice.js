@@ -9,15 +9,16 @@ export const reportsSlice = createSlice({
   initialState,
   reducers: {
     addReport: (state, action) => {
-      state.reports = [...state.reports, {...action.payload, id: state.reports.length == 0 ? 1 
-        : state.reports[state.reports.length - 1].id + 1}]
+      const report = [...state.reports, {...action.payload, id: state.reports.length == 0 ? 1 
+        : state.reports[state.reports.length - 1].id + 1}];
+
+      //sort by id
+      const sortedReports = report.sort((a, b) => new Date(b.id) - new Date(a.id));
+      state.reports = sortedReports
     },
   },
 })
 
-export const { addReport } = reportsSlice.actions
+export const { addReport } = reportsSlice.actions;
 
-// Other code such as selectors can use the imported `RootState` type
-//export const selectCount = (state) => state.counter.value
-
-export default reportsSlice.reducer
+export default reportsSlice.reducer;

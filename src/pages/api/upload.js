@@ -34,7 +34,6 @@ export default async function upload(req, res) {
       const uuid = Math.random().toString(26).slice(2);
       const oldPath = files.image.filepath;
       await fs.copyFile(oldPath, `./public/images/${uuid}${ext}`);
-      //await fs.renameSync(files.image.filePath, `./public/images/${uuid}${ext}`);
 
       res.status(201).json({
         uuid,
